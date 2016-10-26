@@ -1,0 +1,16 @@
+
+    > compile.bat
+    > run-test.bat
+
+    クラスパスチェック:
+    hoge.Hoge: class hoge.Hoge
+    piyo.HogeExtension: class piyo.HogeExtension
+
+    追加するメソッドを直接呼び出す:
+    extension method: piyo: direct call
+
+    拡張したインスタンス経由で、追加したメソッドを呼び出す:
+    say piyo -> piyo: via extended instance
+
+    > 
+

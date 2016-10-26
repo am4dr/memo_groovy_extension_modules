@@ -1,0 +1,3 @@
+moduleName = HogeExtension
+moduleVersion = 1.0
+extensionClasses = piyo.HogeExtension
