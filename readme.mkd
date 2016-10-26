@@ -1,16 +1,31 @@
+Groovyのextension moduleを、Javaで書かれたクラスに対してJavaで書く。
 
-    > compile.bat
+[1.8. Extension modules - The Groovy programming language - Runtime and compile-time metaprogramming](http://groovy-lang.org/metaprogramming.html#_extension_modules)
+
+ファイル
+
+    hoge/       # 拡張対象のクラスを含むパッケージ
+    ext/        # extension moduleの実装クラスを含むパッケージ
+    org.codehaus.groovy.runtime.ExtensionModule     # extension moduleの実装に関する情報
+                                                    # 拡張のjarのMETA-INF/servicesに含める
+    build.bat   # build/ 以下にコンパイルしたクラスとまとめたjarを生成する
+    run-test.bat    # 拡張されていることの簡単なテストと動作確認
+    test.groovy     # run-test.batによって実行されるコード
+
+実行
+
+    > build.bat
     > run-test.bat
 
     クラスパスチェック:
     hoge.Hoge: class hoge.Hoge
     piyo.HogeExtension: class piyo.HogeExtension
 
-    追加するメソッドを直接呼び出す:
-    extension method: piyo: direct call
+    追加するメソッドを拡張を実装しているクラス上で直接呼び出す:
+    HogeExtention.sayPiyo: piyo: direct call
 
     拡張したインスタンス経由で、追加したメソッドを呼び出す:
-    say piyo -> piyo: via extended instance
+    Hoge.sayPiyo: piyo: via extended instance
 
     > 
 
